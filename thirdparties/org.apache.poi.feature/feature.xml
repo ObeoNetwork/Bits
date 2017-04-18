@@ -9,11 +9,10 @@
         Contributors:
             Obeo - initial API and implementation
  -->
-
 <feature
       id="org.apache.poi.feature"
       label="Apache POI"
-      version="3.15.0.qualifier"
+      version="3.16.0.qualifier"
       provider-name="Apache">
 
    <description url="https://poi.apache.org/">
