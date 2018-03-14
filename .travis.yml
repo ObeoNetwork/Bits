@@ -21,7 +21,7 @@ script:
 - mkdir -p thirdparties/org.obeonetwork.bits.thirdparties.update/target/repository/
 - touch thirdparties/org.obeonetwork.bits.thirdparties.update/update-site.txt
 - mvn clean package -e -Dgpg.skip=true
-- export TAG_OR_BRANCH="${TRAVIS_BRANCH}/nightly"
+- export TAG_OR_BRANCH="${TRAVIS_BRANCH}"
 - if [[ "$TRAVIS_TAG" != "" ]]; then export TAG_OR_BRANCH="${TRAVIS_TAG}"; fi
 - chmod a+x prepare-deploy-local-dir.sh
 - "./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/nightly"
