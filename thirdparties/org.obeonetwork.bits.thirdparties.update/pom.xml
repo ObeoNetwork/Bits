@@ -25,7 +25,20 @@
   <packaging>eclipse-repository</packaging>
   
   
-  <build>        
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <createArtifactRepository>true</createArtifactRepository>
+          <finalName>repository/${project.artifactId}</finalName>
+          <compress>true</compress>
+          <repositoryName>M2Doc ${unqualifiedVersion}.${buildQualifier}</repositoryName>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
   
 </project>
