@@ -7,7 +7,8 @@
     <poiVersion>4.0.1</poiVersion>
     <xmlbeansVersion>3.0.2</xmlbeansVersion>
     <ooxmlSchemasVersion>1.4</ooxmlSchemasVersion>
-    <collections4Version>4.2</collections4Version>
+    <commonCollections4Version>4.2</commonCollections4Version>
+    <commonCompressVersion>1.18</commonCompressVersion>
   </properties>
 
   <parent>
@@ -85,7 +86,16 @@
                 <artifactItem>
                   <groupId>org.apache.commons</groupId>
                   <artifactId>commons-collections4</artifactId>
-                  <version>${collections4Version}</version>
+                  <version>${commonCollections4Version}</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>org.apache.commons</groupId>
+                  <artifactId>commons-compress</artifactId>
+                  <version>${commonCompressVersion}</version>
                   <type>jar</type>
                   <overWrite>false</overWrite>
                   <outputDirectory>${project.build.outputDirectory}</outputDirectory>
