@@ -9,6 +9,7 @@
     <ooxmlSchemasVersion>1.4</ooxmlSchemasVersion>
     <commonCollections4Version>4.2</commonCollections4Version>
     <commonCompressVersion>1.18</commonCompressVersion>
+    <commonMath3Version>3.6.1</commonMath3Version>
   </properties>
 
   <parent>
@@ -96,6 +97,15 @@
                   <groupId>org.apache.commons</groupId>
                   <artifactId>commons-compress</artifactId>
                   <version>${commonCompressVersion}</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>org.apache.commons</groupId>
+                  <artifactId>commons-math3</artifactId>
+                  <version>${commonMath3Version}</version>
                   <type>jar</type>
                   <overWrite>false</overWrite>
                   <outputDirectory>${project.build.outputDirectory}</outputDirectory>
