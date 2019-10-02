@@ -4,12 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <properties>
-    <poiVersion>4.0.1</poiVersion>
-    <xmlbeansVersion>3.0.2</xmlbeansVersion>
+    <poiVersion>4.1.0</poiVersion>
+    <xmlbeansVersion>3.1.0</xmlbeansVersion>
     <ooxmlSchemasVersion>1.4</ooxmlSchemasVersion>
-    <commonCollections4Version>4.2</commonCollections4Version>
+    <commonCollections4Version>4.3</commonCollections4Version>
     <commonCompressVersion>1.18</commonCompressVersion>
     <commonMath3Version>3.6.1</commonMath3Version>
+    <commonCodecVersion>1.12</commonCodecVersion>
+    <curvesapiVersion>1.06</curvesapiVersion>
   </properties>
 
   <parent>
@@ -103,6 +105,15 @@
                 </artifactItem>
 
                 <artifactItem>
+                  <groupId>commons-codec</groupId>
+                  <artifactId>commons-codec</artifactId>
+                  <version>${commonCodecVersion}</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                </artifactItem>
+
+                <artifactItem>
                   <groupId>org.apache.commons</groupId>
                   <artifactId>commons-math3</artifactId>
                   <version>${commonMath3Version}</version>
@@ -115,6 +126,15 @@
                   <groupId>org.apache.xmlbeans</groupId>
                   <artifactId>xmlbeans</artifactId>
                   <version>${xmlbeansVersion}</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>com.github.virtuald</groupId>
+                  <artifactId>curvesapi</artifactId>
+                  <version>${curvesapiVersion}</version>
                   <type>jar</type>
                   <overWrite>false</overWrite>
                   <outputDirectory>${project.build.outputDirectory}</outputDirectory>
