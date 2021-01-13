@@ -43,3 +43,15 @@ jobs:
         ./prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
         echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
 
+    - name: Deploy to S3
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: "eu-west-1"
+        SOURCE_DIR: ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}
+        DEST_DIR: bits/${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}
+
