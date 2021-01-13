@@ -6,5 +6,5 @@ echo "Prepare deploy local dir = ${DEPLOY_LOCAL_DIR}"
 mkdir -p $DEPLOY_LOCAL_DIR 
 # Copy update-site and target platform to deploy local dir
 cp -r $UPDATE_SITE_DIR/* $DEPLOY_LOCAL_DIR
-echo "ls ${DEPLOY_LOCAL_DIR}"
-ls $DEPLOY_LOCAL_DIR
+echo "find ${DEPLOY_LOCAL_DIR}"
+find $DEPLOY_LOCAL_DIR
