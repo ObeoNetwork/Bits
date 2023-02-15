@@ -1,5 +1,5 @@
 <!--
-    Copyright (c) 2016 Obeo. 
+    Copyright (c) 2016, 2023 Obeo. 
        All rights reserved. This program and the accompanying materials
        are made available under the terms of the Eclipse Public License v1.0
        which accompanies this distribution, and is a vailable at
@@ -16,7 +16,7 @@
   </prerequisites>
   <groupId>org.obeonetwork.bits</groupId>
   <artifactId>org.obeonetwork.bits.parent</artifactId>
-  <version>0.13.0-SNAPSHOT</version>
+  <version>0.14.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>        
@@ -27,8 +27,8 @@
   </modules>
 
   <properties>
-    <tycho-version>0.24.0</tycho-version>
-    <tycho-extras-version>0.24.0</tycho-extras-version>
+    <tycho-version>3.0.1</tycho-version>
+    <tycho-extras-version>3.0.1</tycho-extras-version>
     <resource-encoding>UTF-8</resource-encoding>
     <maven-resources-version>2.6</maven-resources-version>
     <tycho.scmUrl>scm:git:git://github.com/ObeoNetwork/Bits.git</tycho.scmUrl>
@@ -54,46 +54,6 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
-      <!-- enable source bundle generation -->
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-source-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>false</addMavenDescriptor>
-          </archive>
-        </configuration>
-        <executions>
-          <execution>
-            <id>plugin-source</id>
-            <goals>
-              <goal>plugin-source</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-<!--
-      <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-source-feature-plugin</artifactId>
-        <version>${tycho-extras-version}</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>false</addMavenDescriptor>
-          </archive>
-        </configuration>
-        <executions>
-          <execution>
-            <id>source-feature</id>
-            <phase>package</phase>
-            <goals>
-              <goal>source-feature</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
--->
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>

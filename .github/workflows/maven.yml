@@ -8,7 +8,7 @@ on: [push, pull_request]
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Environment
@@ -17,12 +17,13 @@ jobs:
         echo GITHUB_REF $GITHUB_REF
         echo GITHUB_SHA $GITHUB_SHA
         echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
       with:
-        java-version: 1.8
-    - uses: actions/cache@v1
+        distribution: 'adopt'
+        java-version: 17
+    - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -32,7 +33,7 @@ jobs:
     - name: Build with Maven
       env:
         MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
-      run: mvn clean verify -e -Dgpg.skip=true
+      run: mvn clean verify -e -Dgpg.skip=true -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
       id: prepare_deploy
@@ -41,7 +42,7 @@ jobs:
         export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         ./prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
-        echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
+        echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
 
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
