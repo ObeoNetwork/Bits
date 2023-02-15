@@ -31,7 +31,6 @@ jobs:
           ${{ runner.os }}-maven-
 
     - name: Build with Maven
-      env:
       run: mvn clean verify -e -Dgpg.skip=true -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
