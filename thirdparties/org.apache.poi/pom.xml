@@ -30,6 +30,11 @@
       <artifactId>poi-ooxml-full</artifactId>
       <version>${poiVersion}</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-scratchpad</artifactId>
+      <version>${poiVersion}</version>
+    </dependency>
   </dependencies>
 
   <build>

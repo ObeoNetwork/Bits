@@ -27,8 +27,8 @@
   </modules>
 
   <properties>
-    <tycho-version>3.0.1</tycho-version>
-    <tycho-extras-version>3.0.1</tycho-extras-version>
+    <tycho-version>3.0.3</tycho-version>
+    <tycho-extras-version>3.0.3</tycho-extras-version>
     <resource-encoding>UTF-8</resource-encoding>
     <maven-resources-version>2.6</maven-resources-version>
     <tycho.scmUrl>scm:git:git://github.com/ObeoNetwork/Bits.git</tycho.scmUrl>
