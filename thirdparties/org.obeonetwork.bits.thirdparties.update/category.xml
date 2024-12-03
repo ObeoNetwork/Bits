@@ -2,7 +2,9 @@
 <site>
    <feature id="org.apache.poi.feature" version="0.0.0">
       <category name="ThirdParties"/>
-   </feature>   
+   </feature>
+   <bundle id="org.antlr.runtime" version="4.7.2.v20221112-9999"/>
+   <bundle id="org.antlr.runtime" version="4.10.1.v20230210-9999"/>
    <category-def name="ThirdParties" label="Third Parties Libraries">
       <description>
          Libraries re-packaged as OSGi bundles and Eclipse features.
